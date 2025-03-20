@@ -1,0 +1,267 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Pure black theme with blue accents */
+    --background: 0 0% 0%;         /* Pure black */
+    --foreground: 213 31% 91%;     /* Light blue-gray */
+    
+    --card: 220 20% 2%;            /* Very dark black with slight blue tint */
+    --card-foreground: 213 31% 91%;
+    
+    --popover: 220 15% 2%;         /* Very dark black-blue for popovers */
+    --popover-foreground: 213 31% 91%;
+    
+    --primary: 216 98% 52%;        /* Vibrant blue */
+    --primary-foreground: 213 31% 98%;
+    
+    --secondary: 215 25% 10%;      /* Very dark muted blue */
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 220 10% 4%;           /* Almost black with subtle blue tint */
+    --muted-foreground: 215 20% 65%;
+    
+    --accent: 212 93% 45%;         /* Vibrant blue accent */
+    --accent-foreground: 210 40% 98%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 215 25% 8%;          /* Darker blue border */
+    --input: 215 25% 8%;
+    --ring: 224 76% 48%;           /* Bright blue ring */
+    
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  /* Responsive text sizes */
+  h1 {
+    @apply text-xl md:text-2xl lg:text-3xl;
+  }
+  h2 {
+    @apply text-lg md:text-xl lg:text-2xl;
+  }
+  h3 {
+    @apply text-base md:text-lg lg:text-xl;
+  }
+}
+
+/* Custom global styles */
+@layer components {
+  /* Responsive container */
+  .responsive-container {
+    @apply w-full px-2 sm:px-4 md:px-6 lg:px-8 mx-auto;
+  }
+
+  /* Responsive card */
+  .responsive-card {
+    @apply p-2 sm:p-3 md:p-4 lg:p-6 rounded-lg;
+  }
+
+  /* Responsive grid layouts */
+  .responsive-grid-2 {
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 md:gap-4 lg:gap-6;
+  }
+  
+  .responsive-grid-3 {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-6;
+  }
+  
+  .responsive-grid-4 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-6;
+  }
+  
+  /* Responsive text classes */
+  .responsive-text-sm {
+    @apply text-xs sm:text-sm md:text-base;
+  }
+  
+  .responsive-text-base {
+    @apply text-sm sm:text-base md:text-lg;
+  }
+  
+  .responsive-text-lg {
+    @apply text-base sm:text-lg md:text-xl;
+  }
+
+  /* Overflow tables */
+  .responsive-table-container {
+    @apply w-full overflow-x-auto;
+  }
+
+  /* Glow effects */
+  .blue-glow {
+    @apply shadow-[0_0_15px_rgba(59,130,246,0.35)];
+  }
+  
+  .blue-glow-sm {
+    @apply shadow-[0_0_8px_rgba(59,130,246,0.25)];
+  }
+  
+  .blue-glow-lg {
+    @apply shadow-[0_0_25px_rgba(59,130,246,0.35)];
+  }
+  
+  /* Special glow for the AI button */
+  .ai-button-glow {
+    @apply shadow-[0_0_12px_rgba(59,130,246,0.3)];
+  }
+  
+  /* Card styling - standardized with blue glow */
+  .card-dark {
+    @apply bg-gradient-to-b from-black to-gray-950 p-6 blue-glow-sm rounded-lg border border-blue-950/40 transition-all duration-300;
+  }
+  
+  /* Fix for double borders on specific cards */
+  .no-card-border {
+    @apply border-0;
+  }
+  
+  /* Glass effect for modern UI - simplified */
+  .glass-panel {
+    @apply bg-black/80 backdrop-blur-md border border-gray-800;
+  }
+  
+  /* Outlined border */
+  .outline-border {
+    @apply border border-gray-800;
+  }
+  
+  /* Accent line */
+  .accent-line {
+    @apply h-px w-full bg-gray-800;
+  }
+  
+  /* Sidebar active item */
+  .sidebar-item-active {
+    @apply bg-gray-900 text-white border-l-2 border-blue-600;
+  }
+  
+  /* Button hover effects */
+  .button-hover {
+    @apply hover:bg-gray-900 transition-all duration-300;
+  }
+  
+  /* Heading text */
+  .heading-text {
+    @apply text-white font-medium;
+  }
+  
+  /* Table styles for dark theme */
+  .table-dark {
+    @apply bg-black/60 border border-gray-800;
+  }
+  
+  .table-dark th {
+    @apply bg-gray-950 text-gray-300 border-b border-gray-800;
+  }
+  
+  .table-dark td {
+    @apply border-b border-gray-900 text-gray-300;
+  }
+  
+  .table-dark tr:hover {
+    @apply bg-blue-950/20;
+  }
+  
+  /* Tech grid background - darker version */
+  .tech-grid-bg {
+    background-color: black;
+    background-image: 
+      linear-gradient(rgba(10, 20, 40, 0.4) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(10, 20, 40, 0.4) 1px, transparent 1px);
+    background-size: 25px 25px;
+    background-position: -1px -1px;
+  }
+  
+  /* Responsive font sizes for mobile */
+  .mobile-text-xs {
+    @apply text-[0.7rem] sm:text-xs;
+  }
+  
+  .mobile-text-sm {
+    @apply text-xs sm:text-sm;
+  }
+  
+  .mobile-text-base {
+    @apply text-sm sm:text-base;
+  }
+}
+
+/* Dashboard specific styles */
+.revenue-funnel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.revenue-funnel .stage {
+  position: relative;
+  transition: all 0.3s ease;
+  border-radius: 0.5rem;
+}
+
+.revenue-funnel .stage:hover {
+  transform: translateY(-4px);
+  @apply blue-glow;
+  z-index: 10;
+}
+
+.kpi-card {
+  @apply bg-gray-800/80 border border-gray-700 blue-glow-sm rounded-lg;
+  transition: all 0.2s ease;
+}
+
+.kpi-card:hover {
+  transform: translateY(-2px);
+  @apply blue-glow;
+}
+
+/* Custom animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.7);
+  }
+}
+
+.animate-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+/* Tech-style grid background */
+.tech-grid-bg {
+  background-color: black;
+  background-image: 
+    linear-gradient(rgba(10, 20, 40, 0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 20, 40, 0.4) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: -1px -1px;
+}
+
+/* Mobile and tablet adjustments for funnel visualization */
+@media (max-width: 768px) {
+  .revenue-funnel-mobile {
+    @apply flex flex-col space-y-2;
+  }
+  
+  .revenue-funnel-mobile-stage {
+    @apply p-2 rounded-md border border-blue-900/30 bg-gradient-to-r from-blue-950/60 to-gray-900/60;
+  }
+  
+  .table-responsive {
+    @apply block w-full overflow-x-auto;
+  }
+}
